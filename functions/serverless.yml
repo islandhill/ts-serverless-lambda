@@ -54,7 +54,7 @@ provider:
 
 functions:
   hello:
-    handler: hello/hello-handler.helloHandler
+    handler: src/handlers/hello-handler.helloHandler
     events:
       - http:
           path: hello
