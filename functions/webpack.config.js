@@ -10,6 +10,16 @@ function loaders() {
   }];
 }
 
+function preLoaders() {
+  return [
+    {
+      test: /\.js?$/,
+      loader: 'eslint-loader',
+      exclude: [/node_modules/]
+    }
+  ]
+}
+
 const handlersBasePath = './src/handlers';
 
 module.exports = {
@@ -19,6 +29,7 @@ module.exports = {
   },
   target: 'node',
   module: {
+    preLoaders: preLoaders(),
     loaders: loaders()
   },
   output: {

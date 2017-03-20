@@ -3,3 +3,4 @@ functions/dist
 .serverless
 .idea
 *.iml
+npm-debug.log

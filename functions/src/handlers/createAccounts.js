@@ -5,7 +5,7 @@ module.exports.createAccounts = (event, context, callback) => {
     const object = record.dynamodb.NewImage;
     const firstName = object.firstName.S;
     const lastName = object.lastName.S;
-    if (record.eventName === "INSERT") {
+    if (record.eventName === 'INSERT') {
       console.log(record.eventName, firstName, lastName);
     }
   });

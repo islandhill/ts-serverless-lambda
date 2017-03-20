@@ -38,7 +38,7 @@ module.exports.get = (event, context, callback) => {
 
     callback(null, {
       statusCode: 404,
-      body: JSON.stringify({message: "Resource not found"})
+      body: JSON.stringify({message: 'Resource not found'})
     });
   });
 };
