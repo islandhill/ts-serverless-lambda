@@ -10,9 +10,12 @@ function loaders() {
   }];
 }
 
+const handlersBasePath = './src/handlers';
+
 module.exports = {
   entry: {
-    hello: './src/handlers/hello-handler.js',
+    hello: `${handlersBasePath}/hello-handler.js`,
+    health: `${handlersBasePath}/health-handler.js`
   },
   target: 'node',
   module: {

@@ -20,7 +20,10 @@ sls logs -f createAccounts
 sls webpack
 
 # invoke
-export SLS_DEBUG=true; sls webpack invoke --function hello
+export SLS_DEBUG=true
+sls webpack invoke -f hello
+sls webpack invoke -f health
+
 ```
 
 # Httpie Cli

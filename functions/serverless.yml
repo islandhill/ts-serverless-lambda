@@ -30,3 +30,29 @@ functions:
           path: hello
           method: get
           cors: true
+  health:
+    handler: health.healthHandler
+    events:
+      - http:
+          path: health
+          method: get
+
+resources:
+  Resources:
+    PartnersDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        TableName: 'partners'
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
