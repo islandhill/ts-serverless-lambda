@@ -32,3 +32,14 @@ sls webpack invoke -f health
 
 # Ref
 https://github.com/apex/apex
+
+##Things to do
+* Dynamo db creation
+* VPC and IAM roles
+* Unit tests (Jest, Yarn)
+* Api certificate
+* Function calls metrics (<=1m, 30m, 60m, 24hr), throttling, errors
+* Monitoring
+* API doc
+* JSON api
+
