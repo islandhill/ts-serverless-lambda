@@ -7,7 +7,7 @@
 # Severless Cli
 * sls help
 * sls deploy
-* sls remove
+* sls remove -v
 * sls invoke --local -f hello
 * sls logs -f createAccounts
 

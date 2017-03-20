@@ -54,44 +54,49 @@ provider:
 
 functions:
   hello:
-    handler: handlers/handler.hello
-  create:
-    handler: handlers/create.create
+    handler: hello/hello-handler.helloHandler
     events:
       - http:
-          path: partners
-          method: post
-          cors: true
-  get:
-    handler: handlers/get.get
-    events:
-      - http:
-          path: partners/{id}
+          path: hello
           method: get
           cors: true
-  createAccounts:
-      handler: handlers/createAccounts.createAccounts
-      events:
-        - stream: arn:aws:dynamodb:ap-southeast-2:528520963814:table/partners/stream/2017-01-12T01:05:21.327
+#  create:
+#    handler: handlers/create.create
+#    events:
+#      - http:
+#          path: partners
+#          method: post
+#          cors: true
+#  get:
+#    handler: handlers/get.get
+#    events:
+#      - http:
+#          path: partners/{id}
+#          method: get
+#          cors: true
+#  createAccounts:
+#      handler: handlers/createAccounts.createAccounts
+#      events:
+#        - stream: arn:aws:dynamodb:ap-southeast-2:528520963814:table/partners/stream/2017-01-12T01:05:21.327
 
-resources:
-  Resources:
-    PartnersDynamoDbTable:
-      Type: 'AWS::DynamoDB::Table'
-      DeletionPolicy: Retain
-      Properties:
-        AttributeDefinitions:
-          -
-            AttributeName: id
-            AttributeType: S
-        KeySchema:
-          -
-            AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: 'partners'
+#resources:
+#  Resources:
+#    PartnersDynamoDbTable:
+#      Type: 'AWS::DynamoDB::Table'
+#      DeletionPolicy: Retain
+#      Properties:
+#        AttributeDefinitions:
+#          -
+#            AttributeName: id
+#            AttributeType: S
+#        KeySchema:
+#          -
+#            AttributeName: id
+#            KeyType: HASH
+#        ProvisionedThroughput:
+#          ReadCapacityUnits: 1
+#          WriteCapacityUnits: 1
+#        TableName: 'partners'
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
