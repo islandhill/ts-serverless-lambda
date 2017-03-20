@@ -1,15 +1,27 @@
 # Serverless setup
 
-# Toolings
+## Toolings
 * Install https://serverless.com/
 * Install https://httpie.org/
 
-# Severless Cli
-* sls help
-* sls deploy
-* sls remove -v
-* sls invoke --local -f hello
-* sls logs -f createAccounts
+## Serverless Cli
+```bash
+sls help
+sls deploy
+sls remove -v
+sls invoke --local -f hello
+sls logs -f createAccounts
+```
+
+## Building with Serverless webpack
+
+```bash
+# build
+sls webpack
+
+# invoke
+export SLS_DEBUG=true; sls webpack invoke --function hello
+```
 
 # Httpie Cli
 * http -v --json POST https://6xrpd11ej4.execute-api.ap-southeast-2.amazonaws.com/dev/partners firstName=T lastName=S

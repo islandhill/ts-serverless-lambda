@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.helloHandler = (event, context, callback) => {
+export const helloHandler = (event, context, callback) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
@@ -15,10 +15,12 @@ module.exports.helloHandler = (event, context, callback) => {
 };
 
 const printContext = (context) => {
-  console.log('remaining time =', context.getRemainingTimeInMillis());
-  console.log('functionName =', context.functionName);
-  console.log('AWSrequestID =', context.awsRequestId);
-  console.log('logGroupName =', context.logGroupName);
-  console.log('logStreamName =', context.logStreamName);
-  console.log('clientContext =', context.clientContext);
+  //if(context) {
+  //  console.log('remaining time =', context.getRemainingTimeInMillis());
+  //  console.log('functionName =', context.functionName);
+  //  console.log('AWSrequestID =', context.awsRequestId);
+  //  console.log('logGroupName =', context.logGroupName);
+  //  console.log('logStreamName =', context.logStreamName);
+  //  console.log('clientContext =', context.clientContext);
+  //}
 }
