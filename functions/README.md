@@ -32,6 +32,7 @@ sls webpack invoke -f health
 
 # Ref
 https://github.com/apex/apex
+https://github.com/aws/aws-sdk-js
 
 ##Things to do
 * Dynamo db creation

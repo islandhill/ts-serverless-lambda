@@ -6,8 +6,13 @@ export default class HealthController {
     this.partnersStore = partnersStore;
   }
 
-  get() {
-    return this.partnersStore.checkHealth();
+  check() {
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        status: this.partnersStore.checkHealth()
+      }),
+    };
   }
 
 
