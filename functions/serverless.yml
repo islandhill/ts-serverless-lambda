@@ -43,14 +43,14 @@ resources:
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:
-        TableName: 'partners'
+        TableName: 'test'
         AttributeDefinitions:
           -
-            AttributeName: id
+            AttributeName: user
             AttributeType: S
         KeySchema:
           -
-            AttributeName: id
+            AttributeName: user
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1

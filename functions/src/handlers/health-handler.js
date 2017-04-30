@@ -1,9 +1,9 @@
 'use strict';
 import HealthController from '../controllers/health-controller';
-import PartnersStore from '../store/health-store';
+import TestStore from '../store/test-store';
 
 export const healthHandler = (event, context, callback) => {
-  const partnerStore = new PartnersStore();
-  const healthController = new HealthController(partnerStore);
+  const testStore = new TestStore({});
+  const healthController = new HealthController(testStore);
   callback(null, healthController.check());
 };

@@ -24,6 +24,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "eslint": "^3.18.0",
     "eslint-loader": "^1.6.3",
+    "exports-loader": "^0.6.4",
     "serverless-webpack": "^1.0.0-rc.4",
     "webpack": "^1.13.1"
   }

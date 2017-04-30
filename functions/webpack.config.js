@@ -7,6 +7,10 @@ function loaders() {
     loaders: ['babel'],
     include: __dirname,
     exclude: /node_modules/,
+  },
+  {
+    test: /aws-sdk.js/,
+    loader: 'exports?AWS'
   }];
 }
 
@@ -30,11 +34,19 @@ module.exports = {
   target: 'node',
   module: {
     preLoaders: preLoaders(),
-    loaders: loaders()
+    loaders: loaders(),
+    noParse: [
+      /aws-sdk.js/
+    ]
+  },
+  resolve: {
+    alias: {
+      'aws-sdk': 'aws-sdk/dist/aws-sdk'
+    }
   },
   output: {
     libraryTarget: 'commonjs',
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
-  },
+  }
 };

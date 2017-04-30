@@ -2,15 +2,15 @@
 
 export default class HealthController {
 
-  constructor(partnersStore) {
-    this.partnersStore = partnersStore;
+  constructor(testStore) {
+    this.testStore = testStore;
   }
 
   check() {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        status: this.partnersStore.checkHealth()
+        status: this.testStore.checkHealth()
       }),
     };
   }
